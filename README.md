@@ -44,8 +44,10 @@ SET PASSWORD FOR ubuntu = PASSWORD('newpass');
 GRANT ALL PRIVILEGES on *.* to 'ubuntu'@'localhost' IDENTIFIED BY 'newpass';
 GRANT SELECT on *.* to 'ubuntu'@'%' IDENTIFIED BY 'newpass';
 ```
+
     - expose port 3306 in AWS EC2 console security group
     - create db 
+
 ```
 echo "create database dbname;"|mysql -u ubuntu
 mysql -u ubuntu dbname < initdb/schema.sql
