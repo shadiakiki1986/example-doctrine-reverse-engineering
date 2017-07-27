@@ -1,0 +1,6 @@
+driver: pdo_mysql
+host: my.ip.com
+port: 3306
+user: user
+password: pass
+dbname: dbname

@@ -1,0 +1,28 @@
+{
+    "name": "shadiakiki1986/example-doctrine-reverse-engineering",
+    "authors": [
+        {
+            "name": "Shadi Akiki",
+            "email": "shadiakiki1986@gmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "^2.5",
+        "symfony/yaml": "^3.3"
+    },
+    "suggest": {
+        "ext-sqlsrv": "Driver to connect to sql server database",
+        "ext-pdo_sqlsrv": "Driver to connect to sql server database"
+    },
+    "autoload": {
+      "psr-4" : {
+        "MfBfDriver\\ORM\\Core\\"   : "src/MfBfDriver/ORM/Core/"
+      }
+    },
+    "scripts": {
+      "doctrine-update": [
+        "vendor/bin/doctrine orm:convert-mapping --from-database --force --namespace 'MfBfDriver\\ORM\\Core\\' -- yml src/config",
+        "vendor/bin/doctrine orm:generate-entities --update-entities --no-backup -- src"
+      ]
+    }
+}
